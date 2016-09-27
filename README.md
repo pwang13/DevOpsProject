@@ -26,4 +26,4 @@ The branch name is contained in the request to trigger the build, so we are able
 The output by the maven will be stored in a textfile. The information regarding to each build will be append that text file. The content of this text-file will be directed to http requests made to the build server.<br>
 
 ### Contributions
-@glingna: post-build task, create the markdown file.
+glingna: post-build task, create the markdown file.
