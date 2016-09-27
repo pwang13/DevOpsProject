@@ -1,4 +1,5 @@
 # DevOpsProject
+### Build Section
 **Trigger Build**<br>
 The build is triggered by the post-receive hook of the Github. Once a push is made to the Github, the Github will send a request to the build-server on AWS. The build server will parse the request to obtain the Repo address and the corresponding branch name.<br>
 
