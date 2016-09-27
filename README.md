@@ -1,5 +1,6 @@
 # DevOpsProject
 ### Build Section
+[ScreenCasts](https://www.youtube.com/watch?v=LIC-QpUA_jw&feature=youtu.be)
 
 GitHub Hooks to trigger the build:<br>
 ![Git Hooks](https://github.ncsu.edu/tthai/DevOpsProject/blob/master/SnapShot1.png)<br>
@@ -7,8 +8,6 @@ Display build status over HTTP, with build tasks for different branches:<br>
 ![Display HTTPS](https://github.ncsu.edu/tthai/DevOpsProject/blob/master/SnapShot2.png)<br>
 Email Notification<br>
 ![Email Notification](https://github.ncsu.edu/tthai/DevOpsProject/blob/master/SnapShot3.png)
-
-[ScreenCasts](https://www.youtube.com/watch?v=LIC-QpUA_jw&feature=youtu.be)
 
 **Trigger Build**<br>
 The build is triggered by the post-receive hook of the Github. Once a push is made to the Github, the Github will send a request to the build-server on AWS. The build server will parse the request to obtain the Repo address and the corresponding branch name.<br>
