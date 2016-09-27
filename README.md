@@ -14,7 +14,7 @@ The branch name is contained in the request to trigger the build, so we are able
 **Build History and Display over HTTP**<br>
 The output by the maven will be stored in a textfile. The information regarding to each build will be append that text file. The content of this text-file will be directed to http requests made to the build server.<br>
 
-**Snapshots**
+**Snapshots**<br>
 GitHub Hooks to trigger the build:<br>
 ![Git Hooks](https://github.ncsu.edu/tthai/DevOpsProject/blob/master/SnapShot1.png)<br>
 Display build status over HTTP, with build tasks for different branches:<br>
