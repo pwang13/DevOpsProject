@@ -26,4 +26,6 @@ The output by the maven will be stored in a textfile. The information regarding 
 
 ### Contributions
 glingna: post-build task, create the markdown file.<br>
-Peng Wang(pwang13): Dependency Management, Build Script, Screencast, [Test Cases](https://github.com/pwang13/JSPDemo)
+Peng Wang(pwang13): Dependency Management, Build Script, Screencast, [Test Cases](https://github.com/pwang13/JSPDemo).<br>
+Lam Thai (tthai): setup AWS, node.js script.
+
