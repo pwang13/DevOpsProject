@@ -1,0 +1,4 @@
+Statements   : 100% ( 136/136 )
+Branches     : 100% ( 30/30 )
+Functions    : 100% ( 6/6 )
+Lines        : 100% ( 135/135 )
