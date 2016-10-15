@@ -23,6 +23,7 @@ echo "----------Basic Metrics Finished----------"
 
 echo ""
 
+sh run_pmd.sh
 if [ -f "PMD_Report.txt" ]
 then
     error_num=`wc -l PMD_Report.txt`
@@ -30,7 +31,7 @@ then
     echo $SUBSTRING
     if test $SUBSTRING -gt 5
     then
-        exit 1
+        ERROR=1
     fi
 fi
 
