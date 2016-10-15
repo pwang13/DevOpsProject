@@ -7,7 +7,8 @@ ERROR=0
 
 echo "----------Running Unit Test----------"
 node unit-test.js
-if [ $? -eq 1 ]; then
+ret=$?
+if [ $ret -ne 0 ]; then
    ERROR=1
 fi
 echo "----------Unit Test Finished----------"
@@ -25,7 +26,8 @@ echo ""
 
 echo "----------Running Basic Metrics----------"
 node metrics.js mystery.js
-if [ $? -eq 1 ]; then
+ret=$?
+if [ $ret -ne 0 ]; then
    ERROR=1
 fi
 echo "----------Basic Metrics Finished----------"
@@ -45,6 +47,8 @@ then
     fi
 fi
 echo "----------End of PMD Report----------------"
+
+echo ""
 
 if [ $ERROR -eq 1 ]; then
    echo "Pre-commit check failed! Please check the error message above."
