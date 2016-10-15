@@ -1,27 +1,20 @@
-#!/bin/sh
-# Refuse to commit files with the string NOCOMMIT, debugger, or merge markers present.
-#
 
-# Exit code
-ERROR=0
-
-echo "----------Running Unit Test----------"
-node unit-test.js
-ret=$?
-if [ $ret -ne 0 ]; then
-   ERROR=1
-fi
 echo "----------Unit Test Finished----------"
 
 echo ""
 
 echo "----------Running Istanbul----------"
 node_modules/.bin/istanbul cover test.js > test.txt
-filename='test.txt'
-filename1='result.txt'
-sed -n '3,6p' "$filename">$filename1
 echo "----------Istanbul Finished----------"
+echo "----------Coverage Result-----------"
+cat test.txt
+node cover.js
+res = $?
+if [!$res]; then
+	ERROR = 1
+	echo "Did not meet coverage requirements!"
 
+fi
 echo ""
 
 echo "----------Running Basic Metrics----------"
