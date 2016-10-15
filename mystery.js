@@ -11,7 +11,7 @@ function inc(p, q){
 
 function weird(x,y,z, mode)
 {
-    if( x > 87 && y < 70 )
+    if( x > 87 && y < 70 && x < 100 )
     {
         z = 33;
     }    
