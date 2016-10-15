@@ -23,17 +23,19 @@ echo "----------Basic Metrics Finished----------"
 
 echo ""
 
-sh run_pmd.sh
+echo "----------PMD Report----------------------"
 if [ -f "PMD_Report.txt" ]
 then
+    cat PMD_Report.txt
     error_num=`wc -l PMD_Report.txt`
-    SUBSTRING=$(echo error_num| cut -d ' ' -f 1)
-    echo $SUBSTRING
+    SUBSTRING=$(echo $error_num| cut -d ' ' -f 1)
+    #echo $SUBSTRING
     if test $SUBSTRING -gt 5
     then
-        ERROR=1
+       ERROR=1 
     fi
 fi
+echo "----------End of PMD Report----------------"
 
 if [ $ERROR -eq 1 ]; then
    echo "Pre-commit check failed! Please check the error message above."
