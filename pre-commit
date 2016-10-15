@@ -5,6 +5,15 @@
 # Exit code
 ERROR=0
 
+echo "----------Running Unit Test----------"
+node unit-test.js
+if [ $? -eq 1 ]; then
+   ERROR=1
+fi
+echo "----------Unit Test Finished----------"
+
+echo ""
+
 echo "----------Running Istanbul----------"
 node_modules/.bin/istanbul cover test.js > test.txt
 filename='test.txt'
