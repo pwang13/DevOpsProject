@@ -35,6 +35,7 @@ echo "----------Basic Metrics Finished----------"
 echo ""
 
 echo "----------PMD Report----------------------"
+sh run_pmd.sh
 if [ -f "PMD_Report.txt" ]
 then
     cat PMD_Report.txt
