@@ -1,0 +1,30 @@
+#!/bin/sh
+# Refuse to commit files with the string NOCOMMIT, debugger, or merge markers present.
+#
+
+# Exit code
+ERROR=0
+
+echo "----------Running Istanbul----------"
+node_modules/.bin/istanbul cover test.js > test.txt
+filename='test.txt'
+filename1='result.txt'
+sed -n '3,6p' "$filename">$filename1
+echo "----------Istanbul Finished----------"
+
+echo ""
+
+echo "----------Running Basic Metrics----------"
+node metrics.js mystery.js
+if [ $? -eq 1 ]; then
+   ERROR=1
+fi
+echo "----------Basic Metrics Finished----------"
+
+echo ""
+
+if [ $ERROR -eq 1 ]; then
+   echo "Pre-commit check failed! Please check the error message above."
+fi
+
+exit $ERROR
