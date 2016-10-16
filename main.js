@@ -70,7 +70,7 @@ function generateTestCases()
                content += "subject.{0}({1});\n".format( funcName, combinations[i] );
             }
          } else {
-            content += "subject.{0}();\n".format( funcName );
+            //content += "subject.{0}();\n".format( funcName );
          }
       }
    }

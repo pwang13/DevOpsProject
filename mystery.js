@@ -10,14 +10,17 @@ function inc(p, q){
 }
  
 function dummy() {
-  console.log("haha");
-  console.log("haha");
-  console.log("haha");
-  console.log("haha");
-  console.log("haha");
-  console.log("haha");
-  console.log("haha");
-  console.log("haha");
+  var i = 1;
+  var j = 2;
+  var k = 3;
+  i = j;
+  j = k;
+  k = i;
+  i *= 2;
+  j *= 3;
+  k *= 4;
+
+  i = j + k;
 }
 
 function weird(x,y,z, mode)
