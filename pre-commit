@@ -65,16 +65,16 @@ echo ""
 
 if [ $ERROR -eq 1 ]; then
 	echo "Pre-commit check failed! "
-	if [ $unitTestFlag -eq 1]; then
+	if [ $unitTestFlag -eq 1 ]; then
 		echo "Unit Test Failed!"
    	fi
-   	if [ $coverageTestFlag -eq 1]; then
+   	if [ $coverageTestFlag -eq 1 ]; then
 		echo "Coverage Test Failed!"
    	fi
-   	if [ $metricsFlag -eq 1]; then
+   	if [ $metricsFlag -eq 1 ]; then
 		echo "Metrics Test Failed!"
    	fi
-   	if [ $pmdFlag -eq 1]; then
+   	if [ $pmdFlag -eq 1 ]; then
 		echo "PMD Test Failed!"
    	fi
 else
