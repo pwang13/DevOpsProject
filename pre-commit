@@ -4,11 +4,16 @@
 
 # Exit code
 ERROR=0
+unitTestFlag=0
+coverageTestFlag=0
+metricsFlag=0
+pmdFlag=0
 
 echo "----------Running Unit Test----------"
 node unit-test.js
 ret=$?
 if [ $ret -ne 0 ]; then
+   unitTestFlag=1
    ERROR=1
 fi
 echo "----------Unit Test Finished----------"
@@ -20,6 +25,7 @@ cat test.txt
 node cover.js
 ret=$?
 if [ $ret -ne 0 ]; then
+	coverageTestFlag=1
 	ERROR=1
 	echo "Did not meet coverage requirements!"
 fi
@@ -30,6 +36,7 @@ echo "----------Running Basic Metrics----------"
 node metrics.js mystery.js
 ret=$?
 if [ $ret -ne 0 ]; then
+   metricsFlag=1
    ERROR=1
 else
    echo "OK"
@@ -48,7 +55,8 @@ then
     #echo $SUBSTRING
     if test $SUBSTRING -gt 6
     then
-       ERROR=1 
+       pmdFlag=1 
+       ERROR=1
     fi
 fi
 echo "----------End of PMD Report----------------"
@@ -56,7 +64,19 @@ echo "----------End of PMD Report----------------"
 echo ""
 
 if [ $ERROR -eq 1 ]; then
-   echo "Pre-commit check failed! Please check the error message above."
+	echo "Pre-commit check failed! "
+	if [ $unitTestFlag -eq 1]; then
+		echo "Unit Test Failed!"
+   	fi
+   	if [ $coverageTestFlag -eq 1]; then
+		echo "Coverage Test Failed!"
+   	fi
+   	if [ $metricsFlag -eq 1]; then
+		echo "Metrics Test Failed!"
+   	fi
+   	if [ $pmdFlag -eq 1]; then
+		echo "PMD Test Failed!"
+   	fi
 else
    echo "PASS"
 fi

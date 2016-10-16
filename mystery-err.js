@@ -4,7 +4,7 @@ function inc(p, q){
    if(q == 77 ) q =1;
    if( p < -100 )
    {
-   	p = -p;
+   	p = p;
    }
    return p + q/q;
 }
