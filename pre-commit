@@ -14,7 +14,7 @@ fi
 echo "----------Unit Test Finished----------"
 
 # Coverage check
-node main.js >/dev/null
+node main.js mystery.js >/dev/null
 node_modules/.bin/istanbul cover test.js > test.txt 2>/dev/null
 cat test.txt
 node cover.js
@@ -31,6 +31,8 @@ node metrics.js mystery.js
 ret=$?
 if [ $ret -ne 0 ]; then
    ERROR=1
+else
+   echo "OK"
 fi
 echo "----------Basic Metrics Finished----------"
 
@@ -44,7 +46,7 @@ then
     error_num=`wc -l PMD_Report.txt`
     SUBSTRING=$(echo $error_num| cut -d ' ' -f 1)
     #echo $SUBSTRING
-    if test $SUBSTRING -gt 5
+    if test $SUBSTRING -gt 6
     then
        ERROR=1 
     fi
@@ -55,6 +57,8 @@ echo ""
 
 if [ $ERROR -eq 1 ]; then
    echo "Pre-commit check failed! Please check the error message above."
+else
+   echo "PASS"
 fi
 
 exit $ERROR

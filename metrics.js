@@ -3,8 +3,8 @@ var options = {tokens:true, tolerant: true, loc: true, range: true };
 var fs = require("fs");
 
 var MAX_CONDITIONS = 2;
-var MAX_FUNCTION_LINES = 10;
-var MAX_NESTED_DEPTH = 1;
+var MAX_FUNCTION_LINES = 30;
+var MAX_NESTED_DEPTH = 2;
 var error = false;
 
 function main()
