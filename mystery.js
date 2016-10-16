@@ -8,6 +8,17 @@ function inc(p, q){
    }
    return p + q/q;
 }
+ 
+function print() {
+  console.log("haha");
+  console.log("haha");
+  console.log("haha");
+  console.log("haha");
+  console.log("haha");
+  console.log("haha");
+  console.log("haha");
+  console.log("haha");
+}
 
 function weird(x,y,z, mode)
 {
