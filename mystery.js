@@ -9,15 +9,18 @@ function inc(p, q){
    return p + q/q;
 }
  
-function print() {
-  console.log("haha");
-  console.log("haha");
-  console.log("haha");
-  console.log("haha");
-  console.log("haha");
-  console.log("haha");
-  console.log("haha");
-  console.log("haha");
+function dummy() {
+  var i = 1;
+  var j = 2;
+  var k = 3;
+  i = j;
+  j = k;
+  k = i;
+  i *= 2;
+  j *= 3;
+  k *= 4;
+
+  i = j + k;
 }
 
 function weird(x,y,z, mode)
@@ -113,4 +116,4 @@ exports.format = format;
 exports.inc = inc;
 exports.weird = weird;
 exports.blackListNumber = blackListNumber;
-
+exports.dummy = dummy;
