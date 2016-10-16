@@ -18,7 +18,7 @@ fs.readFile('test.txt', 'utf8', function (err,data) {
   		// console.log(j);
   		var n = parseFloat(lines[i].substring(j + 1,k));
   		// console.log(n >110);
-  		if ( n < 110) {
+  		if ( n < 90) {
   			process.exit(1);
   		}
   	}

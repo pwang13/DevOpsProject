@@ -14,6 +14,7 @@ fi
 echo "----------Unit Test Finished----------"
 
 # Coverage check
+node main.js >/dev/null
 node_modules/.bin/istanbul cover test.js > test.txt 2>/dev/null
 cat test.txt
 node cover.js
