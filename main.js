@@ -64,9 +64,13 @@ function generateTestCases()
       }
       else
       {
-         var combinations = generateArgCombinations(functionConstraints[funcName]);
-         for(var i = 0; i < combinations.length; i++) {
-            content += "subject.{0}({1});\n".format( funcName, combinations[i] );
+         if(functionConstraints[funcName].params.length > 0) {
+            var combinations = generateArgCombinations(functionConstraints[funcName]);
+            for(var i = 0; i < combinations.length; i++) {
+               content += "subject.{0}({1});\n".format( funcName, combinations[i] );
+            }
+         } else {
+            content += "subject.{0}();\n".format( funcName );
          }
       }
    }

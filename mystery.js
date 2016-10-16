@@ -9,7 +9,7 @@ function inc(p, q){
    return p + q/q;
 }
  
-function print() {
+function dummy() {
   console.log("haha");
   console.log("haha");
   console.log("haha");
@@ -113,4 +113,4 @@ exports.format = format;
 exports.inc = inc;
 exports.weird = weird;
 exports.blackListNumber = blackListNumber;
-
+exports.dummy = dummy;
