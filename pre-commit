@@ -1,12 +1,20 @@
+#!/bin/sh
+# Refuse to commit files with the string NOCOMMIT, debugger, or merge markers present.
+#
 
+# Exit code
+ERROR=0
+
+echo "----------Running Unit Test----------"
+node unit-test.js
+ret=$?
+if [ $ret -ne 0 ]; then
+   ERROR=1
+fi
 echo "----------Unit Test Finished----------"
 
-echo ""
-
-echo "----------Running Istanbul----------"
-node_modules/.bin/istanbul cover test.js > test.txt
-echo "----------Istanbul Finished----------"
-echo "----------Coverage Result-----------"
+# Coverage check
+node_modules/.bin/istanbul cover test.js > test.txt 2>/dev/null
 cat test.txt
 node cover.js
 ret=$?
