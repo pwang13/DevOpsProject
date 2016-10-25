@@ -19,6 +19,6 @@ The output by the maven will be stored in a textfile. The information regarding 
 GitHub Hooks to trigger the build:<br>
 ![Git Hooks](/SnapShot1.png)<br>
 Display build status over HTTP, with build tasks for different branches:<br>
-![Display HTTPS](https://github.ncsu.edu/tthai/DevOpsProject/blob/master/SnapShot2.png)<br>
+![Display HTTPS](/SnapShot2.png)<br>
 Email Notification<br>
-![Email Notification](https://github.ncsu.edu/tthai/DevOpsProject/blob/master/SnapShot3.png)
+![Email Notification](/SnapShot3.png)
